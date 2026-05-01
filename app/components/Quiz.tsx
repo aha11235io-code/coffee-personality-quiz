@@ -107,8 +107,8 @@ export default function Quiz() {
   const [answers, setAnswers] = useState<Personality[]>([]);
   const [result, setResult] = useState<Personality | null>(null);
 
-  function handleAnswer(personality: string) {
-    const p = personality as Personality;
+  function handleAnswer(personality: Personality) {
+    const p = personality;
     const newAnswers = [...answers, p];
     if (currentQuestion + 1 >= questions.length) {
       setAnswers(newAnswers);

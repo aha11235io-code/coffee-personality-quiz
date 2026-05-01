@@ -1,9 +1,11 @@
 "use client";
 
+type Personality = "Bold Adventurer" | "Sweet Enthusiast" | "Artisan Snob" | "Indulgent Treat";
+
 interface Answer {
   text: string;
   icon: string;
-  personality: string;
+  personality: Personality;
 }
 
 interface QuizQuestionProps {
@@ -11,7 +13,7 @@ interface QuizQuestionProps {
   answers: Answer[];
   currentIndex: number;
   total: number;
-  onAnswer: (personality: string) => void;
+  onAnswer: (personality: Personality) => void;
 }
 
 export default function QuizQuestion({
